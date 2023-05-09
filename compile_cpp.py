@@ -10,7 +10,7 @@ try:
     pwd_dir = os.getcwd() # get current working directory: https://stackoverflow.com/questions/37427683/python-search-for-a-file-in-current-directory-and-all-its-parents
     cpp_file_list = []
 
-    if choice.lower() == "all":
+    if choice.lower() == "all" or choice.lower() == "a":
 
         for files in os.listdir(pwd_dir):
             if files.endswith(".cpp") or files.endswith(".h"):
@@ -20,10 +20,9 @@ try:
 
         command = ["g++"] + cpp_file_list + ["-o", os.path.join(pwd_dir, final_file_name + ".exe")]
         subprocess.run(command,shell=False)
-        input("Press any key to exit ...")
+        input("Successful compiling. \nPress any key to exit ...")
 
-    if choice.lower() == "some":
-        if choice.lower() == "some":
+    elif choice.lower() == "some" or choice.lower() == "s":
 
             file_list = []
             for file in os.listdir(os.getcwd()):
@@ -39,7 +38,7 @@ try:
             files_string = " ".join(selected_files)
             command = ["g++"] + selected_files + ["-o", os.path.join(pwd_dir, final_file_name + ".exe")]
             subprocess.run(command, shell=False)
-            input("Press any key to exit ...")
+            input("Successful compiling.\nPress any key to exit ...")
 
 
 
