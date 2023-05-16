@@ -29,9 +29,7 @@ try:
                 if file.endswith(".cpp") or file.endswith(".h"):
                     file_list.append(os.path.abspath(os.path.join(pwd_dir, file)))
 
-            questions = [iq.Checkbox('file',
-                                     message="Choose file path(s): ",
-                                     choices=file_list), ]
+            questions = [iq.Checkbox('file', message="Choose file path(s): ", choices=file_list), ]
 
             answers = iq.prompt(questions)
             selected_files = answers['file']
